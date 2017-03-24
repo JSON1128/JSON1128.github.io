@@ -161,6 +161,212 @@ POST方法获取参数:
   </entry>
   
   <entry>
+    <title>MongoDB 数据库带你入门</title>
+    <link href="http://yoursite.com/2016/07/14/MongoDB-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B8%A6%E4%BD%A0%E5%85%A5%E9%97%A8/"/>
+    <id>http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/</id>
+    <published>2016-07-14T13:28:09.000Z</published>
+    <updated>2017-03-24T13:29:48.941Z</updated>
+    
+    <content type="html"><![CDATA[<p>MongoDB 数据库</p>
+<pre><code>为了更好的学习 MongoDB 数据库，大家可以参考菜鸟教程上的 MongoDB 数据库教程文档，
+链接地址：http://www.runoob.com/mongodb/mongodb-tutorial.html
+
+mongodb数据库官网:https://www.mongodb.com/
+
+下载地址:https://www.mongodb.com/download-center?jmp=nav
+选择好对应的版本下载即可
+</code></pre><p>MongoDB好处?</p>
+<pre><code>理由:
+
+  1.只要会js/json就会mongodb(学习成本低)
+  2.mongodb对js的兼容性最好
+  3.mongodb存数据就是存JSON
+</code></pre><p>安装与配置 MongoDB 数据库环境</p>
+<pre><code>详情见视频：
+
+怎么验证安装成功:
+  在cmd终端中输入： mongo --version 或是 mongod --version ,能看到版本好,说明安装成功
+
+如果终端中输入 mongo --version 提示找不到命令,一定要看看是不是没有配置mongodb的环境变量,并且配置环境变量之后一定要记得重启cmd
+</code></pre><p>window7安装MongoDB存在的问题</p>
+<pre><code>建议:升级到window10
+
+解决步骤:
+  1.将你的操作系统升级到window7最新版
+  2.安装 vc_redist.x64.exe 
+  3.如果你的电脑是32位的,再安装32位的mongodb软件 mongodb-win32-i386-3.2.11-signed.msi
+</code></pre><p>MongoDB 数据库存储结构</p>
+<pre><code>和Excel对比一下即可明白:
+
+Excel                       MongoDB
+</code></pre><p>   创建工作簿          创建数据库</p>
+<p>   创建一个sheet(工作表单)    创建集合</p>
+<p>   确立表头,插入数据        插入文档(确立表头)</p>
+<p>  核心思想:</p>
+<pre><code>1.分门别类的存储数据
+
+2.mongodb是以集合的概念来区分不同数据的,比如用户集合,商品集合,订单集合等等,不同的数据要放在不同的集合中去统一管理
+
+3.集合里面存储的可以认为是一个数组
+
+4.数组中的每一个对象,可以认为就是JSON对象,在mongodb中我们称之为 文档
+
+5.文档的结构可以随意,但是必须统一,也就是说,同一个集合中,所有的文档一定要遵守相同的数据结构
+</code></pre><p>  其他:</p>
+<pre><code>集合的作用就是用来隔离数据,分门别类的存储数据
+</code></pre><p>操作MongoDB的步骤</p>
+<pre><code>1.创建数据库中数据的存储目录
+2.启动MongoDB的服务实例
+3.创建数据库
+4.创建集合
+5.创建文档
+</code></pre><hr>
+<p>MongoDB使用之前必做步骤1–创建数据目录(必须)</p>
+<pre><code>我们在安装完成MongoDB后需要创建一个存放数据的目录。请注意，数据目录应该放在根目录下（(如： C:\ 或者 D:\ 等 ),数据目录的命名随意,比如我就命名 mongodb_datas
+</code></pre><hr>
+<p>MongoDB使用之前必做步骤2–启动服务器(必须)</p>
+<pre><code>启动MongoDB服务器的方式一：通过终端指令去启动
+
+  1.首先在终端切换到你的MongoDB的安装目录的bin目录下(当然如果配置了环境变量在哪个目录下都可以了)
+
+  2.在终端执行: mongod.exe --dbpath c:/mongodb_datas ,如果成功启动就表示一切都OK了
+
+  注意点:
+    1.32 位版本使用下面的命令启动数据服务：
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath 数据存储路径 --journal --storageEngine=mmapv1</div></pre></td></tr></table></figure>
+
+
+    2.执行完上面的命令并成功开启 MongoDB 数据服务实例之后，就把该控制台最小化到一边就可以了，
+    千万不要关闭，否则无法连接，如果对数据库的操作结束，可以打开该控制台通过 `Ctrl + C` 关闭。
+
+启动MongoDB服务器的方式二:方式一的延续,把上面的指令做成一个批处理文件.bat
+
+启动MongoDB服务器的方式三:将MongoDB服务器作为Windows服务运行
+
+  请注意，你必须有管理权限才能运行下面的命令。执行以下命令将MongoDB服务器作为Windows服务运行：
+
+  例子:
+    mongod.exe --bind_ip 127.0.0.1 --logpath &quot;C:/mongodb_datas/server_log/mongodb.log&quot; --logappend --dbpath &quot;c:/mongodb_datas&quot; --port 27017 --serviceName &quot;MongoDBServer&quot; --serviceDisplayName &quot;MongoDBServerDisplayName&quot; --install
+
+  补充:从Windows服务中卸载 MongoDB服务
+    1.先停止要删除的服务(比如MongoDBServer)
+    2.以管理员身份运行cmd,在cmd中输入: sc delete 服务名称(比如MongoDBServer)
+
+  注意点:
+    1.mongodb.log 这个日志文件一定要先创建好,才能执行指令
+    2.必须要以管理员的身份打开cmd窗口,并运行
+</code></pre><hr>
+<p>如何连接到MongoDB服务器并且操作它？</p>
+<p>注意：在进行连接之前请确保你的服务实例是开启状态的（不要关闭刚才开启的数据服务实例）。</p>
+<pre><code>可以使用两种方式来连接到MongoDB服务器并且操作它
+
+连接方式1:使用MongoDB自带的MongoDB后台管理 Shell
+  在终端中输入 mongo 或是 mongo --host 127.0.0.1 --port 27017
+
+  mongo 命令默认去连接本机上的 MongoDB 服务实例：`127.0.0.1:27017`，可以通过下面的命令
+  指定连接的主机名和端口号：
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo --host 127.0.0.1 --port 27017</div></pre></td></tr></table></figure>
+
+
+  如果看到类似于如下的字样说明连接成功：
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">MongoDB shell version v3.4.2</div><div class="line">connecting to: mongodb://127.0.0.1:27017</div><div class="line">MongoDB server version: 3.4.2</div><div class="line">Server has startup warnings:</div><div class="line">2017-01-18T18:49:53.865+0800 I CONTROL  [initandlisten]</div><div class="line">2017-01-18T18:49:53.865+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.</div><div class="line">2017-01-18T18:49:53.866+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.</div><div class="line">2017-01-18T18:49:53.866+0800 I CONTROL  [initandlisten]</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+
+  如果提示 “无法连接主机”，请检查你的 MongoDB 数据服务实例是否开启。
+
+操作方式1:在终端中使用mongodb的指令进行操作
+
+    常见指令:
+      见下一个知识点
+
+连接及操作方式2:使用图形化客户端工具:
+  robomongo(跨平台) : https://robomongo.org/download
+</code></pre><hr>
+<p>基本操作命令</p>
+<pre><code>可以参考:
+  http://www.yiibai.com/mongodb/mongodb_create_collection.html
+
+  http://www.runoob.com/mongodb/mongodb-tutorial.html
+</code></pre><ul>
+<li>show dbs<ul>
+<li>查看当前服务实例上所有的数据库</li>
+</ul>
+</li>
+<li>use 数据库名称<ul>
+<li>如果数据库不存在，则创建数据库，否则切换到指定数据库。</li>
+</ul>
+</li>
+<li>db.dropDatabase()<ul>
+<li>删除数据库,注意,要在切换的数据库中删除</li>
+</ul>
+</li>
+<li>db<ul>
+<li>查看当前所处的数据库</li>
+</ul>
+</li>
+<li>show collections<ul>
+<li>查看当前数据库中所有的集合</li>
+</ul>
+</li>
+<li>db.createCollection(“集合名称”)<ul>
+<li>创建集合</li>
+</ul>
+</li>
+<li>db.集合名称.drop()<ul>
+<li>删除集合</li>
+</ul>
+</li>
+<li>db.集合名称.insert({数据文档})<ul>
+<li>插入的每一条文档会自动帮我们生成一个_id字段,它是mongodb自动维护的,不需要我们关心</li>
+</ul>
+</li>
+<li>db.集合名称.find()<ul>
+<li>查询指定集合中所有的数据</li>
+<li>可以通过 db.集合名称.find().pretty() 美化输出格式</li>
+<li>默认是查询所有，可以通过：db.集合名称.find({查询条件}) 按条件查询集合中的数据</li>
+<li>模糊查询的条件 {要查询的字段:{$regex: ‘关键字’}}</li>
+</ul>
+</li>
+<li>db.集合名称.update({更新条件}, {要更新的字段})<ul>
+<li>更新指定集合数据,注意点,要更新的字段一定要这样写 {$set:{字段的名称:字段的值}},</li>
+</ul>
+</li>
+<li>db.集合名称.update({更新条件}, {要更新的字段},{multi:true})<ul>
+<li>更新多条文档,{multi:true}默认是false</li>
+</ul>
+</li>
+<li>db.集合名称.remove({删除条件})<ul>
+<li>删除指定集合中的数据</li>
+</ul>
+</li>
+<li>db.集合名称.remove({删除条件},{multi:true})<ul>
+<li>删除多条文档,{multi:true}默认是false</li>
+</ul>
+</li>
+<li>exit 退出当前操作</li>
+<li>cls 清屏<br>注意点:更新和删除时一般都需要带条件,除非是全部更新与全部删除,不过全部更新与全部删除这样很危险,实际操作过程中很少</li>
+</ul>
+<p>使用 Node 操作 MongoDB</p>
+<p>安装 MongoDB 官方提供的驱动包：</p>
+<pre><code>npm install --save mongodb
+</code></pre><p>具体操作方式请参考官方文档：<a href="https://www.npmjs.com/package/mongodb" target="_blank" rel="external">https://www.npmjs.com/package/mongodb</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MongoDB 数据库&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;为了更好的学习 MongoDB 数据库，大家可以参考菜鸟教程上的 MongoDB 数据库教程文档，
+链接地址：http://www.runoob.com/mongodb/mongodb-tutorial.html
+
+mo
+    
+    </summary>
+    
+    
+      <category term="数据库,nodeJS" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-nodeJS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>gulp 入门教程</title>
     <link href="http://yoursite.com/2016/04/24/gulp-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/04/24/gulp-入门教程/</id>
@@ -476,7 +682,7 @@ https://github.com/webpack/webpack
     <link href="http://yoursite.com/2016/03/13/%E5%85%B3%E4%BA%8ENodeJS/"/>
     <id>http://yoursite.com/2016/03/13/关于NodeJS/</id>
     <published>2016-03-13T11:52:26.000Z</published>
-    <updated>2017-03-24T13:21:14.572Z</updated>
+    <updated>2017-03-24T13:22:53.452Z</updated>
     
     <content type="html"><![CDATA[<p>学习资源推荐</p>
 <pre><code>网站:国内NodeJS开发者社区：https://cnodejs.org/

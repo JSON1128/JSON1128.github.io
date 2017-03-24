@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>MongoDB 数据库带你入门 | 开心博客 | 不停止的脚步,不服输的心!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#ff4400">
+    
+    
+    <meta name="keywords" content="数据库,nodeJS">
+    <meta name="description" content="MongoDB 数据库
+为了更好的学习 MongoDB 数据库，大家可以参考菜鸟教程上的 MongoDB 数据库教程文档，
+链接地址：http://www.runoob.com/mongodb/mongodb-tutorial.html
+
+mongodb数据库官网:https://www.mongodb.com/
+
+下载地址:https://www.mongodb.com/download-cen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB 数据库带你入门">
+<meta property="og:url" content="http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/index.html">
+<meta property="og:site_name" content="开心博客">
+<meta property="og:description" content="MongoDB 数据库
+为了更好的学习 MongoDB 数据库，大家可以参考菜鸟教程上的 MongoDB 数据库教程文档，
+链接地址：http://www.runoob.com/mongodb/mongodb-tutorial.html
+
+mongodb数据库官网:https://www.mongodb.com/
+
+下载地址:https://www.mongodb.com/download-cen">
+<meta property="og:updated_time" content="2017-03-24T13:29:48.941Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MongoDB 数据库带你入门">
+<meta name="twitter:description" content="MongoDB 数据库
+为了更好的学习 MongoDB 数据库，大家可以参考菜鸟教程上的 MongoDB 数据库教程文档，
+链接地址：http://www.runoob.com/mongodb/mongodb-tutorial.html
+
+mongodb数据库官网:https://www.mongodb.com/
+
+下载地址:https://www.mongodb.com/download-cen">
+    
+        <link rel="alternative" href="/atom.xml" title="开心博客" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.10">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">刘欢欢</h5>
+          <a href="mailto:15364782604@163.com" title="15364782604@163.com" class="mail">15364782604@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect active">
+              <a href="/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect active">
+              <a href="/" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MongoDB 数据库带你入门</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MongoDB 数据库带你入门</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-07-14T13:28:09.000Z" itemprop="datePublished" class="page-time">
+  2016-07-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-MongoDB-数据库带你入门"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MongoDB 数据库带你入门</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年07月14日 21:28" datetime="2016-07-14T13:28:09.000Z"  itemprop="datePublished">2016-07-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>MongoDB 数据库</p>
+<pre><code>为了更好的学习 MongoDB 数据库，大家可以参考菜鸟教程上的 MongoDB 数据库教程文档，
+链接地址：http://www.runoob.com/mongodb/mongodb-tutorial.html
+
+mongodb数据库官网:https://www.mongodb.com/
+
+下载地址:https://www.mongodb.com/download-center?jmp=nav
+选择好对应的版本下载即可
+</code></pre><p>MongoDB好处?</p>
+<pre><code>理由:
+
+  1.只要会js/json就会mongodb(学习成本低)
+  2.mongodb对js的兼容性最好
+  3.mongodb存数据就是存JSON
+</code></pre><p>安装与配置 MongoDB 数据库环境</p>
+<pre><code>详情见视频：
+
+怎么验证安装成功:
+  在cmd终端中输入： mongo --version 或是 mongod --version ,能看到版本好,说明安装成功
+
+如果终端中输入 mongo --version 提示找不到命令,一定要看看是不是没有配置mongodb的环境变量,并且配置环境变量之后一定要记得重启cmd
+</code></pre><p>window7安装MongoDB存在的问题</p>
+<pre><code>建议:升级到window10
+
+解决步骤:
+  1.将你的操作系统升级到window7最新版
+  2.安装 vc_redist.x64.exe 
+  3.如果你的电脑是32位的,再安装32位的mongodb软件 mongodb-win32-i386-3.2.11-signed.msi
+</code></pre><p>MongoDB 数据库存储结构</p>
+<pre><code>和Excel对比一下即可明白:
+
+Excel                       MongoDB
+</code></pre><p>   创建工作簿          创建数据库</p>
+<p>   创建一个sheet(工作表单)    创建集合</p>
+<p>   确立表头,插入数据        插入文档(确立表头)</p>
+<p>  核心思想:</p>
+<pre><code>1.分门别类的存储数据
+
+2.mongodb是以集合的概念来区分不同数据的,比如用户集合,商品集合,订单集合等等,不同的数据要放在不同的集合中去统一管理
+
+3.集合里面存储的可以认为是一个数组
+
+4.数组中的每一个对象,可以认为就是JSON对象,在mongodb中我们称之为 文档
+
+5.文档的结构可以随意,但是必须统一,也就是说,同一个集合中,所有的文档一定要遵守相同的数据结构
+</code></pre><p>  其他:</p>
+<pre><code>集合的作用就是用来隔离数据,分门别类的存储数据
+</code></pre><p>操作MongoDB的步骤</p>
+<pre><code>1.创建数据库中数据的存储目录
+2.启动MongoDB的服务实例
+3.创建数据库
+4.创建集合
+5.创建文档
+</code></pre><hr>
+<p>MongoDB使用之前必做步骤1–创建数据目录(必须)</p>
+<pre><code>我们在安装完成MongoDB后需要创建一个存放数据的目录。请注意，数据目录应该放在根目录下（(如： C:\ 或者 D:\ 等 ),数据目录的命名随意,比如我就命名 mongodb_datas
+</code></pre><hr>
+<p>MongoDB使用之前必做步骤2–启动服务器(必须)</p>
+<pre><code>启动MongoDB服务器的方式一：通过终端指令去启动
+
+  1.首先在终端切换到你的MongoDB的安装目录的bin目录下(当然如果配置了环境变量在哪个目录下都可以了)
+
+  2.在终端执行: mongod.exe --dbpath c:/mongodb_datas ,如果成功启动就表示一切都OK了
+
+  注意点:
+    1.32 位版本使用下面的命令启动数据服务：
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath 数据存储路径 --journal --storageEngine=mmapv1</div></pre></td></tr></table></figure>
+
+
+    2.执行完上面的命令并成功开启 MongoDB 数据服务实例之后，就把该控制台最小化到一边就可以了，
+    千万不要关闭，否则无法连接，如果对数据库的操作结束，可以打开该控制台通过 `Ctrl + C` 关闭。
+
+启动MongoDB服务器的方式二:方式一的延续,把上面的指令做成一个批处理文件.bat
+
+启动MongoDB服务器的方式三:将MongoDB服务器作为Windows服务运行
+
+  请注意，你必须有管理权限才能运行下面的命令。执行以下命令将MongoDB服务器作为Windows服务运行：
+
+  例子:
+    mongod.exe --bind_ip 127.0.0.1 --logpath &quot;C:/mongodb_datas/server_log/mongodb.log&quot; --logappend --dbpath &quot;c:/mongodb_datas&quot; --port 27017 --serviceName &quot;MongoDBServer&quot; --serviceDisplayName &quot;MongoDBServerDisplayName&quot; --install
+
+  补充:从Windows服务中卸载 MongoDB服务
+    1.先停止要删除的服务(比如MongoDBServer)
+    2.以管理员身份运行cmd,在cmd中输入: sc delete 服务名称(比如MongoDBServer)
+
+  注意点:
+    1.mongodb.log 这个日志文件一定要先创建好,才能执行指令
+    2.必须要以管理员的身份打开cmd窗口,并运行
+</code></pre><hr>
+<p>如何连接到MongoDB服务器并且操作它？</p>
+<p>注意：在进行连接之前请确保你的服务实例是开启状态的（不要关闭刚才开启的数据服务实例）。</p>
+<pre><code>可以使用两种方式来连接到MongoDB服务器并且操作它
+
+连接方式1:使用MongoDB自带的MongoDB后台管理 Shell
+  在终端中输入 mongo 或是 mongo --host 127.0.0.1 --port 27017
+
+  mongo 命令默认去连接本机上的 MongoDB 服务实例：`127.0.0.1:27017`，可以通过下面的命令
+  指定连接的主机名和端口号：
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo --host 127.0.0.1 --port 27017</div></pre></td></tr></table></figure>
+
+
+  如果看到类似于如下的字样说明连接成功：
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">MongoDB shell version v3.4.2</div><div class="line">connecting to: mongodb://127.0.0.1:27017</div><div class="line">MongoDB server version: 3.4.2</div><div class="line">Server has startup warnings:</div><div class="line">2017-01-18T18:49:53.865+0800 I CONTROL  [initandlisten]</div><div class="line">2017-01-18T18:49:53.865+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.</div><div class="line">2017-01-18T18:49:53.866+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.</div><div class="line">2017-01-18T18:49:53.866+0800 I CONTROL  [initandlisten]</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+
+  如果提示 “无法连接主机”，请检查你的 MongoDB 数据服务实例是否开启。
+
+操作方式1:在终端中使用mongodb的指令进行操作
+
+    常见指令:
+      见下一个知识点
+
+连接及操作方式2:使用图形化客户端工具:
+  robomongo(跨平台) : https://robomongo.org/download
+</code></pre><hr>
+<p>基本操作命令</p>
+<pre><code>可以参考:
+  http://www.yiibai.com/mongodb/mongodb_create_collection.html
+
+  http://www.runoob.com/mongodb/mongodb-tutorial.html
+</code></pre><ul>
+<li>show dbs<ul>
+<li>查看当前服务实例上所有的数据库</li>
+</ul>
+</li>
+<li>use 数据库名称<ul>
+<li>如果数据库不存在，则创建数据库，否则切换到指定数据库。</li>
+</ul>
+</li>
+<li>db.dropDatabase()<ul>
+<li>删除数据库,注意,要在切换的数据库中删除</li>
+</ul>
+</li>
+<li>db<ul>
+<li>查看当前所处的数据库</li>
+</ul>
+</li>
+<li>show collections<ul>
+<li>查看当前数据库中所有的集合</li>
+</ul>
+</li>
+<li>db.createCollection(“集合名称”)<ul>
+<li>创建集合</li>
+</ul>
+</li>
+<li>db.集合名称.drop()<ul>
+<li>删除集合</li>
+</ul>
+</li>
+<li>db.集合名称.insert({数据文档})<ul>
+<li>插入的每一条文档会自动帮我们生成一个_id字段,它是mongodb自动维护的,不需要我们关心</li>
+</ul>
+</li>
+<li>db.集合名称.find()<ul>
+<li>查询指定集合中所有的数据</li>
+<li>可以通过 db.集合名称.find().pretty() 美化输出格式</li>
+<li>默认是查询所有，可以通过：db.集合名称.find({查询条件}) 按条件查询集合中的数据</li>
+<li>模糊查询的条件 {要查询的字段:{$regex: ‘关键字’}}</li>
+</ul>
+</li>
+<li>db.集合名称.update({更新条件}, {要更新的字段})<ul>
+<li>更新指定集合数据,注意点,要更新的字段一定要这样写 {$set:{字段的名称:字段的值}},</li>
+</ul>
+</li>
+<li>db.集合名称.update({更新条件}, {要更新的字段},{multi:true})<ul>
+<li>更新多条文档,{multi:true}默认是false</li>
+</ul>
+</li>
+<li>db.集合名称.remove({删除条件})<ul>
+<li>删除指定集合中的数据</li>
+</ul>
+</li>
+<li>db.集合名称.remove({删除条件},{multi:true})<ul>
+<li>删除多条文档,{multi:true}默认是false</li>
+</ul>
+</li>
+<li>exit 退出当前操作</li>
+<li>cls 清屏<br>注意点:更新和删除时一般都需要带条件,除非是全部更新与全部删除,不过全部更新与全部删除这样很危险,实际操作过程中很少</li>
+</ul>
+<p>使用 Node 操作 MongoDB</p>
+<p>安装 MongoDB 官方提供的驱动包：</p>
+<pre><code>npm install --save mongodb
+</code></pre><p>具体操作方式请参考官方文档：<a href="https://www.npmjs.com/package/mongodb" target="_blank" rel="external">https://www.npmjs.com/package/mongodb</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+
+        这里写留言或版权声明：<a href="/2016/07/14/MongoDB-数据库带你入门/" target="_blank" rel="external">http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/</a>
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="刘欢欢">
+            刘欢欢
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库-nodeJS/">数据库,nodeJS</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/&title=《MongoDB 数据库带你入门》 — 开心博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/&title=《MongoDB 数据库带你入门》 — 开心博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MongoDB 数据库带你入门》 — 开心博客&url=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/08/24/express框架-入门教程/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">express框架 入门教程</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/04/24/gulp-入门教程/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">gulp 入门教程</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="MongoDB-数据库带你入门" data-title="MongoDB 数据库带你入门" data-url="http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.10');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>开心博客 &copy; 2014 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/&title=《MongoDB 数据库带你入门》 — 开心博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/&title=《MongoDB 数据库带你入门》 — 开心博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MongoDB 数据库带你入门》 — 开心博客&url=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2016/07/14/MongoDB-数据库带你入门/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.10"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.10" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
