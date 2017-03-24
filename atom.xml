@@ -161,93 +161,6 @@ POST方法获取参数:
   </entry>
   
   <entry>
-    <title>关于NodeJS</title>
-    <link href="http://yoursite.com/2016/05/13/%E5%85%B3%E4%BA%8ENodeJS/"/>
-    <id>http://yoursite.com/2016/05/13/关于NodeJS/</id>
-    <published>2016-05-13T11:52:26.000Z</published>
-    <updated>2017-03-13T11:57:40.738Z</updated>
-    
-    <content type="html"><![CDATA[<p>学习资源推荐</p>
-<pre><code>网站:国内NodeJS开发者社区：https://cnodejs.org/
-
-书籍:《深入浅出Node.js》：作者：阿里巴巴.朴灵
-
-阿里开源论坛:http://code.taobao.org/
-
-360下面的:https://75team.com/
-
-http://stackoverflow.com/ 全世界最牛的程序员问
-答网站
-</code></pre><hr>
-<p>NodeJS 服务器搭建(NodeJS的软件安装)</p>
-<pre><code>安装步骤:
-  见 其它资料 &gt; node.msi安装Node截图
-
-NodeJS服务器的搭建,就类似于我们安装Apache服务器
-
-如何判断有没有安装成功:
-  在cmd终端中输入 node -v 看有没有提示,如果有提示就说明
-  安装成功了,如果没有,还需要做下一步
-
-mac:https://brew.sh/index_zh-cn.html
-
-使用nvm安装多个node版本并且进行切换:
-  http://www.jianshu.com/p/07c3456e875a
-</code></pre><hr>
-<p>系统环境变量的配置</p>
-<pre><code>目的:
-  为了能在终端的任何一个目录下 启动 Node.exe,来执行我们的
-  NodeJS的代码
-
-环境变量有些类似于我们的桌面快捷方式
-
-配置步骤:
-  可以参考 其它资料 &gt; 环境变量设置(以QQ为例) 来配置
-  Node.exe的环境变量,方便在终端的任何目录下启动Node.exe
-  (REPL执行环境),来执行我们的NodeJS代码
-</code></pre><hr>
-<p>REPL执行环境的解释</p>
-<pre><code>它就是我们NodeJS代码的运行环境
-
-
-
-前提:
-  我们的NodeJS的代码不是运行在浏览器中的,那他运行在哪里呢?
-
-基本概念:
-  1.REPL就是Node.exe 启动起来之后的运行环境
-
-  2.REPL 可以理解成类似于`启动起来的`Apache服务器
-
-  3.Node.exe(REPL)环境启动之后,就会执行放入它里面的
-  NodeJS代码了,类似于启动Apache服务器之后就可以运行放入它
-  里面的php代码了
-
-  4.js代码放入到node.exe中就可以执行了
-
-运行起来的 node.exe == REPL执行环境
-</code></pre><hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;学习资源推荐&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;网站:国内NodeJS开发者社区：https://cnodejs.org/
-
-书籍:《深入浅出Node.js》：作者：阿里巴巴.朴灵
-
-阿里开源论坛:http://code.taobao.org/
-
-360下面的:https://
-    
-    </summary>
-    
-    
-      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>gulp 入门教程</title>
     <link href="http://yoursite.com/2016/04/24/gulp-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/04/24/gulp-入门教程/</id>
@@ -555,6 +468,93 @@ https://github.com/webpack/webpack
     
     
       <category term="webpack" scheme="http://yoursite.com/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于NodeJS</title>
+    <link href="http://yoursite.com/2016/03/13/%E5%85%B3%E4%BA%8ENodeJS/"/>
+    <id>http://yoursite.com/2016/03/13/关于NodeJS/</id>
+    <published>2016-03-13T11:52:26.000Z</published>
+    <updated>2017-03-24T13:21:14.572Z</updated>
+    
+    <content type="html"><![CDATA[<p>学习资源推荐</p>
+<pre><code>网站:国内NodeJS开发者社区：https://cnodejs.org/
+
+书籍:《深入浅出Node.js》：作者：阿里巴巴.朴灵
+
+阿里开源论坛:http://code.taobao.org/
+
+360下面的:https://75team.com/
+
+http://stackoverflow.com/ 全世界最牛的程序员问
+答网站
+</code></pre><hr>
+<p>NodeJS 服务器搭建(NodeJS的软件安装)</p>
+<pre><code>安装步骤:
+  见 其它资料 &gt; node.msi安装Node截图
+
+NodeJS服务器的搭建,就类似于我们安装Apache服务器
+
+如何判断有没有安装成功:
+  在cmd终端中输入 node -v 看有没有提示,如果有提示就说明
+  安装成功了,如果没有,还需要做下一步
+
+mac:https://brew.sh/index_zh-cn.html
+
+使用nvm安装多个node版本并且进行切换:
+  http://www.jianshu.com/p/07c3456e875a
+</code></pre><hr>
+<p>系统环境变量的配置</p>
+<pre><code>目的:
+  为了能在终端的任何一个目录下 启动 Node.exe,来执行我们的
+  NodeJS的代码
+
+环境变量有些类似于我们的桌面快捷方式
+
+配置步骤:
+  可以参考 其它资料 &gt; 环境变量设置(以QQ为例) 来配置
+  Node.exe的环境变量,方便在终端的任何目录下启动Node.exe
+  (REPL执行环境),来执行我们的NodeJS代码
+</code></pre><hr>
+<p>REPL执行环境的解释</p>
+<pre><code>它就是我们NodeJS代码的运行环境
+
+
+
+前提:
+  我们的NodeJS的代码不是运行在浏览器中的,那他运行在哪里呢?
+
+基本概念:
+  1.REPL就是Node.exe 启动起来之后的运行环境
+
+  2.REPL 可以理解成类似于`启动起来的`Apache服务器
+
+  3.Node.exe(REPL)环境启动之后,就会执行放入它里面的
+  NodeJS代码了,类似于启动Apache服务器之后就可以运行放入它
+  里面的php代码了
+
+  4.js代码放入到node.exe中就可以执行了
+
+运行起来的 node.exe == REPL执行环境
+</code></pre><hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学习资源推荐&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;网站:国内NodeJS开发者社区：https://cnodejs.org/
+
+书籍:《深入浅出Node.js》：作者：阿里巴巴.朴灵
+
+阿里开源论坛:http://code.taobao.org/
+
+360下面的:https://
+    
+    </summary>
+    
+    
+      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
     
   </entry>
   
