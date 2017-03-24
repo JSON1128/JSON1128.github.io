@@ -414,6 +414,87 @@ https://github.com/webpack/webpack
   </entry>
   
   <entry>
+    <title>npm 使用方法</title>
+    <link href="http://yoursite.com/2016/01/24/npm-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2016/01/24/npm-使用方法/</id>
+    <published>2016-01-24T12:57:32.000Z</published>
+    <updated>2017-03-24T12:58:52.004Z</updated>
+    
+    <content type="html"><![CDATA[<p>npm</p>
+<pre><code>概念:
+  用来管理nodejs第三方包的一个工具
+
+注意:
+  一般情况下,安装了node之后,都会安装npm,npm所在的位置一般在
+  C:\Program Files\nodejs\node_modules
+
+  如果在终端中输入 npm -v 有反映就表示成功了
+</code></pre><hr>
+<p>npm操作之从npmjs.com中安装/下载包</p>
+<pre><code>npm在安装好nodejs之后,就会在nodejs安装目录的node_moules目录下自动帮我们安装好了npm这个包
+
+安装包/下载包分两种
+
+  本地安装:用在当前项目中
+  命令:npm install 包的名称
+
+  全局安装:以后在终端中使用
+  命令:npm install -g 包名称
+</code></pre><hr>
+<p>nrm</p>
+<pre><code>相当于镜像
+
+npm install [-g] 包名称   默认情况下去npmjs.com下载包
+
+nrm ls 可以查看有哪些镜像,并且当前使用的是哪个镜像
+
+cnpm 的使用
+  步骤1:安装cnpm的全局包 npm install -g cnpm
+
+  步骤2:
+</code></pre><hr>
+<p>cnpm 与 npm 的区别</p>
+<pre><code>相同点:都是管理nodejs第三方包的网站
+
+不同点:
+  npm 是正宗
+  cnpm 是淘宝团队开发的
+
+https://npm.taobao.org 这个网站的所有内容来自哪里npmjs.com
+
+  安装包的方式不一样
+    npm : npm install [-g] 包名称
+    cnpm : cnpm install [-g] 包名称
+
+  注意点:
+    npmjs.com 既可以从他上面 下载包,也可以往它上面传我们自己写的包
+    https://npm.taobao.org  是一个只读的,只能下载,不能上传
+
+  应用场景:
+    一般情况下 使用 npmjs.com
+    特殊情况下 使用 https://npm.taobao.org 
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;npm&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;概念:
+  用来管理nodejs第三方包的一个工具
+
+注意:
+  一般情况下,安装了node之后,都会安装npm,npm所在的位置一般在
+  C:\Program Files\nodejs\node_modules
+
+  如果在终端中输
+    
+    </summary>
+    
+    
+      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ES6 语法的基本使用</title>
     <link href="http://yoursite.com/2015/09/24/ES6-%E8%AF%AD%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2015/09/24/ES6-语法的基本使用/</id>
