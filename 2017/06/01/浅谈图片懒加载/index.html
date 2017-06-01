@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>浅谈图片懒加载 | 开心博客 | 不停止的脚步,不服输的心!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#ff4400">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="两种图片lazy加载的方式
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈图片懒加载">
+<meta property="og:url" content="http://yoursite.com/2017/06/01/浅谈图片懒加载/index.html">
+<meta property="og:site_name" content="开心博客">
+<meta property="og:description" content="两种图片lazy加载的方式
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969">
+<meta property="og:updated_time" content="2017-06-01T06:15:26.687Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈图片懒加载">
+<meta name="twitter:description" content="两种图片lazy加载的方式
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969">
+    
+        <link rel="alternative" href="/atom.xml" title="开心博客" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.10">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">刘欢欢</h5>
+          <a href="mailto:15364782604@163.com" title="15364782604@163.com" class="mail">15364782604@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect active">
+              <a href="/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect active">
+              <a href="/" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">浅谈图片懒加载</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">浅谈图片懒加载</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-06-01T06:10:25.000Z" itemprop="datePublished" class="page-time">
+  2017-06-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-浅谈图片懒加载"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">浅谈图片懒加载</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年06月01日 14:10" datetime="2017-06-01T06:10:25.000Z"  itemprop="datePublished">2017-06-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ul>
+<li>两种图片lazy加载的方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// @description 准备为图片预加载使用的插件</span></div><div class="line"><span class="comment">// 使用的图片容器css类名为lazy-load-wrap</span></div><div class="line"><span class="comment">// 图片真实地址为data-lazy-src</span></div><div class="line"><span class="comment">// 当lazy-load-wrap容器进入视口，则开始替换容器内所有需要延迟加载的图片路径，并更改容器的加载状态</span></div><div class="line"><span class="comment">//第一种方法</span></div><div class="line">$.fn.compassLazyLoad=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> _HEIGHT=<span class="built_in">window</span>.innerHeight,</div><div class="line">	_lazyLoadWrap=$(<span class="string">'.lazy-load-wrap'</span>);</div><div class="line"></div><div class="line">	<span class="keyword">var</span> methods=&#123;</div><div class="line">		<span class="attr">setOffsetTop</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			$.each(_lazyLoadWrap,<span class="function"><span class="keyword">function</span>(<span class="params">i,n</span>)</span>&#123;</div><div class="line">				$(n).attr(&#123;</div><div class="line">					<span class="string">'top'</span>:n.offsetTop-_HEIGHT,</div><div class="line">					<span class="string">'status'</span>:<span class="string">'wait'</span></div><div class="line">				&#125;);</div><div class="line">			&#125;)</div><div class="line">		&#125;,</div><div class="line">		<span class="attr">isShow</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">var</span> _scrollTop=$(<span class="built_in">window</span>).scrollTop;</div><div class="line">			<span class="comment">//利用image容器判断是否进入视口，而非image本身</span></div><div class="line">			$.each(_lazyLoadWrap,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> _that=$(<span class="keyword">this</span>);</div><div class="line">				<span class="keyword">if</span> (_that.attr(<span class="string">'status'</span>)===<span class="string">'done'</span>) &#123;</div><div class="line">					<span class="keyword">return</span>;</div><div class="line">				&#125;;</div><div class="line">				<span class="keyword">if</span> (_that.attr(<span class="string">'top'</span>)&lt;=_scrollTop) &#123;</div><div class="line">					_that.find(<span class="string">'img[data-lazy-src]'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">i,n</span>)</span>&#123;</div><div class="line">						n.src=$(n).data(<span class="string">'lazy-src'</span>);</div><div class="line">					&#125;);</div><div class="line">					_that.attr(<span class="string">'status'</span>,<span class="string">'done'</span>);</div><div class="line">				&#125;;</div><div class="line">			&#125;)</div><div class="line">		&#125;,</div><div class="line">		<span class="attr">scroll</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			$(<span class="built_in">window</span>).on(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				methods.isShow();</div><div class="line">			&#125;);</div><div class="line">		&#125;,</div><div class="line">		<span class="attr">init</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			methods.setOffsetTop();</div><div class="line">			methods.isShow();</div><div class="line">			methods.scroll();</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">	methods.init();</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//第二种方法</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> exist=(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> timer=<span class="literal">null</span>,</div><div class="line">	temp=[].slice.call($(<span class="string">'.container'</span>));</div><div class="line">	ret=&#123;&#125;;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,len=temp.length<span class="number">-1</span>;i&lt;=len;i++)&#123;</div><div class="line">		ret[i]=temp[i];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">var</span> isExist=<span class="function"><span class="keyword">function</span>(<span class="params">winTop,winEnd</span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> ret)&#123;</div><div class="line">			<span class="built_in">console</span>.log(ret);</div><div class="line">			<span class="keyword">var</span> item=ret[i],</div><div class="line">			eleTop=item.offsetTop,</div><div class="line">			eleEnd=eleTop+item.offsetHeight;</div><div class="line"></div><div class="line">			<span class="keyword">if</span>((eleTop&gt;winTop&amp;&amp;eleTop&lt;=winEnd)||(eleEnd&gt;winTop&amp;&amp;eleEnd&lt;=winEnd))&#123;</div><div class="line">				$(item).css(<span class="string">'background'</span>,<span class="string">'none'</span>);</div><div class="line">				<span class="keyword">new</span> Tab($(item).attr(<span class="string">'id'</span>),data).init;</div><div class="line">				<span class="keyword">delete</span> ret[i];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">		<span class="attr">timer</span>:timer,</div><div class="line">		<span class="attr">isExist</span>:isExist</div><div class="line">	&#125;;</div><div class="line">&#125;)($);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//第三种方法</span></div><div class="line">Zepto(<span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> swiper = <span class="keyword">new</span> Swiper(<span class="string">'.swiper-container'</span>, &#123;</div><div class="line">        <span class="attr">pagination</span>: <span class="string">'.swiper-pagination'</span>,</div><div class="line">        <span class="attr">paginationClickable</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">autoplay</span>: <span class="number">3000</span>,</div><div class="line">        <span class="attr">loop</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">autoplayDisableOnInteraction</span>: <span class="literal">false</span></div><div class="line">    &#125;);</div><div class="line">    (<span class="function"><span class="keyword">function</span> <span class="title">lazyLoad</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> imgs = $(<span class="string">".lazyLoad"</span>);</div><div class="line">        <span class="keyword">var</span> src = <span class="string">''</span>;</div><div class="line">        $.each(imgs, <span class="function"><span class="keyword">function</span> (<span class="params">index, item</span>) </span>&#123;</div><div class="line">            src = $(item).attr(<span class="string">'data-src'</span>);</div><div class="line">            $(item).attr(<span class="string">'src'</span>, src);</div><div class="line">        &#125;);</div><div class="line">    &#125;)();</div><div class="line">&#125;);</div><div class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> lazyLoadTimerId = <span class="literal">null</span>;</div><div class="line">    <span class="comment">/// 智能加载事件</span></div><div class="line">    $(<span class="built_in">window</span>).bind(<span class="string">"scroll"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        clearTimeout(lazyLoadTimerId);</div><div class="line">        lazyLoadTimerId = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">// 延迟加载所有图片</span></div><div class="line">            <span class="keyword">var</span> isHttp = (location.protocol === <span class="string">"http:"</span>);</div><div class="line">            $(<span class="string">"#ym_images img"</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="keyword">var</span> self = $(<span class="keyword">this</span>);</div><div class="line">                <span class="keyword">if</span> (self.filter(<span class="string">":above-the-fold"</span>).length &gt; <span class="number">0</span>) &#123;</div><div class="line">                    <span class="keyword">var</span> originUrl = self.attr(<span class="string">"data-original"</span>);</div><div class="line">                    self.attr(<span class="string">"src"</span>, originUrl);</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;, <span class="number">500</span>);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+
+        这里写留言或版权声明：<a href="/2017/06/01/浅谈图片懒加载/" target="_blank" rel="external">http://yoursite.com/2017/06/01/浅谈图片懒加载/</a>
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="刘欢欢">
+            刘欢欢
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/06/01/浅谈图片懒加载/&title=《浅谈图片懒加载》 — 开心博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/06/01/浅谈图片懒加载/&title=《浅谈图片懒加载》 — 开心博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/01/浅谈图片懒加载/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《浅谈图片懒加载》 — 开心博客&url=http://yoursite.com/2017/06/01/浅谈图片懒加载/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/01/浅谈图片懒加载/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/08/24/express框架-入门教程/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">express框架 入门教程</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="浅谈图片懒加载" data-title="浅谈图片懒加载" data-url="http://yoursite.com/2017/06/01/浅谈图片懒加载/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.10');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>开心博客 &copy; 2014 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/06/01/浅谈图片懒加载/&title=《浅谈图片懒加载》 — 开心博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/06/01/浅谈图片懒加载/&title=《浅谈图片懒加载》 — 开心博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/01/浅谈图片懒加载/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《浅谈图片懒加载》 — 开心博客&url=http://yoursite.com/2017/06/01/浅谈图片懒加载/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/01/浅谈图片懒加载/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2017/06/01/浅谈图片懒加载/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.10"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.10" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
